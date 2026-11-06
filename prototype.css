@@ -1,0 +1,33 @@
+/* Disposable bilingual homepage prototype. A: products, B: plans, C: use cases. */
+body { padding-bottom: 76px; }
+section[id] { scroll-margin-top: 96px; }
+.top .bar { position: relative; }
+.hero .wrap { min-height: min(680px, 82vh); }
+.hero .actions { margin-bottom: 22px; }
+[data-variant="B"] .hero { background: #eef5ff; }
+[data-variant="B"] .hero .wrap { display: block; text-align: center; padding-block: clamp(48px, 8vw, 100px); }
+[data-variant="B"] .hero .actions, [data-variant="B"] .hero .strip { justify-content: center; }
+[data-variant="B"] .hero p { margin-inline: auto; }
+[data-variant="B"] #pricing { margin-top: 32px; padding: 0; background: none; }
+[data-variant="B"] #pricing .wrap { min-height: 0; width: 100%; padding: 0; }
+[data-variant="B"] #pricing .intro { margin-inline: auto; }
+[data-variant="B"] #products .grid { grid-template-columns: 1fr; }
+[data-variant="B"] #products article { display: grid; grid-template-columns: auto minmax(0, 1fr) minmax(0, 2fr) auto; gap: 18px; align-items: center; }
+[data-variant="B"] #products article > * { margin: 0; }
+[data-variant="C"] .hero { background: #e9f4f0; }
+[data-variant="C"] #solutions.wrap { width: 100%; padding: 0; min-height: 0; display: block; }
+[data-variant="C"] #solutions .grid { grid-template-columns: 1fr; gap: 8px; }
+[data-variant="C"] #solutions .card { padding: 14px 18px; }
+[data-variant="C"] #solutions .card svg { display: none; }
+[data-variant="C"] #solutions .card :is(h3,p) { margin: 3px 0; }
+.plan-switch { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.plan-switch button { font: inherit; cursor: pointer; border: 1px solid #b8cce7; background: #fff; color: #152e50; border-radius: 8px; padding: 8px 14px; }
+.plan-switch [aria-pressed="true"] { background: #174a9d; border-color: #174a9d; color: white; }
+.prototype-switch { position: fixed; z-index: 20; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; color: white; background: #122239; padding: 5px 8px; border-radius: 999px; box-shadow: 0 4px 20px #12223940; white-space: nowrap; font: 600 13px system-ui; }
+.prototype-switch a { display: grid; place-items: center; width: 44px; height: 44px; color: white; border-radius: 50%; background: #2a4467; }
+.prototype-switch a:hover { background: #365e96; }
+@media(max-width: 760px) {
+  .hero .wrap { min-height: 0; }
+  [data-variant="B"] #products article { grid-template-columns: 1fr; gap: 8px; }
+  [data-variant="C"] #solutions.wrap { margin-block: 24px; }
+}
